@@ -2,32 +2,17 @@
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Ant Design Of Angular</h1>
-      </a>
+      <h1>Whoosh</h1>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <li nz-submenu nzOpen nzTitle="Jobs" nzIcon="dashboard">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink='/login'>Login</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+          <li nz-menu-item nzMatchRouter *ngFor="let job of jobList">
+            <a [routerLink]="['/jobcontent/',job.id]" routerLinkActive="router-link-active">{{job.name}}:{{job.id}}</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
-          </li>
-        </ul>
-      </li>
+      <button (click)="createJob()" nz-button class="login-form-margin" [nzType]="'danger'">Add job</button>
     </ul>
   </nz-sider>
   <nz-layout>
@@ -41,7 +26,6 @@
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
-        <p>inner_Content</p>
       </div>
     </nz-content>
   </nz-layout>

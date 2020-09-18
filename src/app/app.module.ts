@@ -18,12 +18,17 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMessageService } from 'ng-zorro-antd';
 import { NgZorroAntdModule, NzCheckboxModule } from 'ng-zorro-antd';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 registerLocaleData(zh);
 
+import { GetjobmsgService} from './services/getjobmsg.service';
+import { CreatejobComponent } from './components/createjob/createjob.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    JobDetailsComponent,
+    CreatejobComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }, NzMessageService],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, NzMessageService,GetjobmsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,59 @@
+<i nz-icon nzType="user"></i><label>名称</label>
+<input type="text" [nzSize]="'large'" nz-input [(ngModel)]="newJob.name" />
+<br>
+
+<i nz-icon nzType="bulb" nzTheme="outline"></i><label>简单介绍</label>
+<input type="text" [nzSize]="'large'" nz-input [(ngModel)]="newJob.desc" />
+
+<br>
+<hr />
+<br>
+
+<h4><i nz-icon nzType="smile" nzTheme="outline"></i>Reader</h4>
+选择reader
+<i nz-icon nzType="down"></i>
+<nz-input-group nzCompact>
+    <nz-select [(ngModel)]="newJob.reader.type" style="width:26%;">
+        <nz-option [nzLabel]="'CSV文件'" [nzValue]="'FILE_CSV'"></nz-option>
+        <nz-option [nzLabel]="'TXT文件'" [nzValue]="'FILE_TXT'"></nz-option>
+        <nz-option [nzLabel]="'excel文件'" [nzValue]="'FILE_EXCEL'"></nz-option>
+    </nz-select>
+    url:<input type="url" nz-input [(ngModel)]="newJob.reader.url" style="width:50%;" />:
+    分隔符:<input type="text" nz-input [(ngModel)]="newJob.reader.delimiter" style="width: 10%;" />
+</nz-input-group>
+<br>
+<!-- .... -->
+
+<h4><i nz-icon nzType="calculator" nzTheme="outline"></i>Processor</h4>
+<nz-input-group nzCompact>
+    <nz-select [(ngModel)]="newJob.processer.type">
+        <nz-option [nzLabel]="'NONE'" [nzValue]="'NONE'"></nz-option>
+        <nz-option [nzLabel]="'FILE'" [nzValue]="'FLAT_FILE'"></nz-option>
+    </nz-select>
+</nz-input-group>
+<br>
+<!-- .... -->
+
+<!-- <h4><i nz-icon nzType="border-outer" nzTheme="outline"></i>Writer</h4>
+<a nz-dropdown [nzDropdownMenu]="menuWriter">
+    选择Writer
+    <i nz-icon nzType="down"></i>
+</a>
+<nz-dropdown-menu #menuWriter="nzDropdownMenu">
+    <ul nz-menu nzSelectable *ngFor="let writer of writerList">
+        <li nz-menu-item (click)='changeWriter(writer.id)'>{{writer.name}}</li>
+    </ul>
+</nz-dropdown-menu>
+<nz-input-group nzCompact>
+    <nz-select [(ngModel)]="newJob.writer.type" style="width:26%;">
+        <nz-option [nzLabel]="'CSV文件'" [nzValue]="'FILE_CSV'"></nz-option>
+        <nz-option [nzLabel]="'TXT文件'" [nzValue]="'FILE_TXT'"></nz-option>
+        <nz-option [nzLabel]="'excel文件'" [nzValue]="'FILE_EXCEL'"></nz-option>
+    </nz-select>
+    <input type="text" nz-input [(ngModel)]="newJob.writer.url" style="width: 30%;" />
+    <input type="text" nz-input [(ngModel)]="newJob.writer.delimiter" style="width: 10%;" />
+</nz-input-group> -->
+<br>
+<!-- {{newJob|json}} -->
+<br>
+<br>
