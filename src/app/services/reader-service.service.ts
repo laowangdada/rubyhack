@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JobVO, Reader, Writer } from '../JobVO';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Root} from '../common/constant';
+import { Root } from '../common/constant';
 @Injectable({
   providedIn: 'root'
 })

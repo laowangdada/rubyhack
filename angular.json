@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "hackathon"
+  "defaultProject": "hackathon",
+  "cli": {
+    "analytics": "e992f0c3-bbdc-4b58-a71c-1161cee7bc48"
+  }
 }
